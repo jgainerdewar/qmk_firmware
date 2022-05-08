@@ -28,8 +28,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-//#define TAPPING_FORCE_HOLD
 //#define TAPPING_TERM 100
+//#define TAPPING_FORCE_HOLD
+
+#define IGNORE_MOD_TAP_INTERRUPT
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
@@ -48,4 +50,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 17
 #endif
 
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+#ifdef OLED_ENABLE
+#   define SPLIT_LAYER_STATE_ENABLE
+#   define SPLIT_LED_STATE_ENABLE
+#   define SPLIT_MODS_ENABLE
+#   define SPLIT_OLED_ENABLE
+#   define OLED_FONT_H "keyboards/crkbd/keymaps/soundmonster/glcdfont.c"
+#   define OLED_TIMEOUT 30000
+#endif
+
+//#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
