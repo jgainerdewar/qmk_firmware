@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [LNAV] = LAYOUT_crkbd_leftlayer(
         KC_TRNS, MY_PTSC, KC_HOME, KC_UP, KC_PGUP, MY_CUT,
-        KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, MY_COPY,
+        KC_NO, KC_LCTL, KC_LEFT, KC_DOWN, KC_RGHT, MY_COPY,
         KC_NO, MY_UNDO, KC_END, MY_FIND, KC_PGDN, MY_PSTE
     ),
     [RNAV] = LAYOUT_crkbd_rightlayer(
