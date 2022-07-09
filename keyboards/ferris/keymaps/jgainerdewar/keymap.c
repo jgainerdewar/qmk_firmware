@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q, KC_W, KC_E, KC_R, KC_T,   KC_Y, KC_U, KC_I, KC_O, KC_P, 
     HR_A, HR_S, HR_D, HR_F, KC_G,   KC_H, HR_J, HR_K, HR_L, HR_QT, 
     KC_Z, KC_X, KC_C, KC_V, KC_B,   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, 
-    LT(LSYM,KC_BSPC), LT(LNAV,KC_TAB),  LT(RNAV,KC_ENT), LT(RSYM,KC_SPC)
+    LT(LSYM,KC_TAB), LT(LNAV,KC_ENT),  LT(RNAV,KC_SPC), LT(RSYM,KC_BSPC)
   ),
   [LNAV] = LAYOUT_ferris_leftlayer(
     MY_PTSC, KC_HOME, KC_UP, KC_PGUP, MY_CUT,
@@ -83,12 +83,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-const uint16_t PROGMEM combo_esc[] = {KC_Q, HR_A, COMBO_END};
-const uint16_t PROGMEM combo_caps[] = {HR_A,KC_Z, COMBO_END};
+const uint16_t PROGMEM combo_esc_r[] = {HR_A, KC_G, COMBO_END};
+const uint16_t PROGMEM combo_esc_l[] = {KC_H, HR_QT, COMBO_END};
+const uint16_t PROGMEM combo_caps_r[] = {KC_Q, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_caps_l[] = {KC_Y, KC_P, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_esc, KC_ESC),
-  COMBO(combo_caps, KC_CAPS)
+  COMBO(combo_esc_r, KC_ESC),
+  COMBO(combo_esc_l, KC_ESC),
+  COMBO(combo_caps_r, KC_CAPS),
+  COMBO(combo_caps_l, KC_CAPS)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
