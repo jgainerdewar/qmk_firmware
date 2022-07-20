@@ -22,6 +22,7 @@ enum custom_keycodes {
     MY_UNDO,
     MY_FIND,
     MY_PTSC,
+    MY_SPLT
 };
 
 enum layers {
@@ -30,6 +31,7 @@ enum layers {
     RNAV,
     LSYM,
     RSYM,
+    SYM
 };
 
 // Homerow mod aliases
@@ -76,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,     KC_W,     KC_E,     KC_R,      KC_T,            KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
     KC_TAB,  HR_A,     HR_S,     HR_D,     HR_F,      KC_G,            KC_H,     HR_J,     HR_K,     HR_L,     HR_QT,    KC_ENT,
     KC_LSFT, KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,            KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_CAPS,
-                                MO(LSYM),   LT(LNAV,KC_ENT), KC_SPC,   MO(RNAV),    MO(RSYM)
+                                MO(LSYM),   LT(LNAV,KC_ENT), LT(SYM,KC_SPC),   LT(MY_SPLT, RNAV),    MO(RSYM)
   ),
 
   [LNAV] = LAYOUT_reviung41_leftlayer(
@@ -101,6 +103,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_COLN, KC_LT, KC_GT, KC_UNDS, KC_NO, KC_TRNS,
     KC_PLUS, KC_MINS, KC_EQL, KC_ASTR, KC_SCLN, KC_TRNS,
     KC_NO, KC_AMPR, KC_BSLS, KC_NO, KC_NO, KC_TRNS
+  ),
+
+  [SYM] = LAYOUT_reviung41(
+    KC_TRNS, KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_PIPE,      KC_COLN, KC_LT, KC_GT, KC_UNDS, KC_NO, KC_TRNS,
+    KC_TRNS, KC_HASH, KC_DLR, KC_LPRN, KC_RPRN, KC_GRV,      KC_PLUS, KC_MINS, KC_EQL, KC_ASTR, KC_SCLN, KC_TRNS,
+    KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,    KC_NO, KC_AMPR, KC_BSLS, KC_NO, KC_NO, KC_TRNS,
+                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 };
 
@@ -134,6 +143,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case MY_PTSC:
       if (record->event.pressed) {
         SEND_STRING(SS_LGUI(SS_LSFT("4")));
+      }
+      return false;
+    case MY_SPLT:
+      if (record->event.pressed) {
+        SEND_STRING(SS_LGUI(" "));
       }
       return false;
   }
