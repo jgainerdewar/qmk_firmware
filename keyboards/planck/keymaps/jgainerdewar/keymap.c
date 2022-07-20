@@ -50,7 +50,7 @@ K06, K07, K08, K09, K10,\
 K11, K12, K13, K14, K15,\
 K16, K17, K18\
 )\
-LAYOUT_reviung41(\
+LAYOUT_planck_grid(\
   K01, K02, K03, K04, K05, K06,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,\
   K07, K08, K09, K10, K11, K12,    KC_NO, KC_RSFT, KC_RGUI, KC_RCTL, KC_RALT,KC_NO,\
   K13, K14, K15, K16, K17, K18,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,\
@@ -63,11 +63,11 @@ K06, K07, K08, K09, K10,\
 K11, K12, K13, K14, K15,\
 K16, K17, K18\
 )\
-LAYOUT_reviung41(\
+LAYOUT_planck_grid(\
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,          K01, K02, K03, K04, K05, K06,\
   KC_NO, KC_LALT, KC_LCTL, KC_LGUI, KC_LSFT,KC_NO,  K07, K08, K09, K10, K11, K12,\
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,          K13, K14, K15, K16, K17, K18,\
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS\
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS\
 )
 
 
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,     KC_W,     KC_E,     KC_R,      KC_T,            KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
     KC_TAB,  HR_A,     HR_S,     HR_D,     HR_F,      KC_G,            KC_H,     HR_J,     HR_K,     HR_L,     HR_QT,    KC_ENT,
     KC_LSFT, KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,            KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_CAPS,
-    KC_NO,   KC_NO,    KC_NO,    MO(LSYM), LT(LNAV,KC_ENT),    KC_SPC,    LT(LNAV,MY_SPLT), MO(RSYM), KC_NO,    KC_NO,    KC_NO
+    KC_NO,   KC_NO,    KC_NO,    MO(LSYM), LT(LNAV,KC_ENT),    KC_SPC,KC_SPC,    LT(RNAV,MY_SPLT), MO(RSYM), KC_NO,    KC_NO,    KC_NO
   ),
 
   [LNAV] = LAYOUT_planck_grid_leftlayer(
