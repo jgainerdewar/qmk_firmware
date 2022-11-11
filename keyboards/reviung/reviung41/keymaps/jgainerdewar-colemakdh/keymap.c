@@ -26,7 +26,6 @@ enum custom_keycodes {
 
 enum layers {
     BASE,
-    COLDHBASE,
     LNAV,
     RNAV,
     LSYM,
@@ -36,22 +35,13 @@ enum layers {
 
 // Homerow mod aliases
 #define HR_A LALT_T(KC_A)
-#define HR_S LCTL_T(KC_S)
-#define HR_D LGUI_T(KC_D)
-#define HR_F LSFT_T(KC_F)
-#define HR_J RSFT_T(KC_J)
-#define HR_K RGUI_T(KC_K)
-#define HR_L RCTL_T(KC_L)
-#define HR_QT RALT_T(KC_QUOT)
-
-// Colemak DH homerow mod aliases
-#define DH_R LCTL_T(KC_R)
-#define DH_S LGUI_T(KC_S)
-#define DH_T LSFT_T(KC_T)
-#define DH_N RSFT_T(KC_N)
-#define DH_E RGUI_T(KC_E)
-#define DH_I RCTL_T(KC_I)
-#define DH_O RALT_T(KC_O)
+#define HR_R LCTL_T(KC_R)
+#define HR_S LGUI_T(KC_S)
+#define HR_T LSFT_T(KC_T)
+#define HR_N RSFT_T(KC_N)
+#define HR_E RGUI_T(KC_E)
+#define HR_I RCTL_T(KC_I)
+#define HR_O RALT_T(KC_O)
 
 
 #define LAYOUT_reviung41_leftlayer(\
@@ -84,15 +74,8 @@ LAYOUT_reviung41(\
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_reviung41(
-    KC_ESC,  KC_Q,     KC_W,     KC_E,     KC_R,      KC_T,            KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
-    KC_TAB,  KC_A,     HR_S,     HR_D,     HR_F,      KC_G,            KC_H,     HR_J,     HR_K,     HR_L,     HR_QT,    KC_ENT,
-    KC_LSFT, KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,            KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_CAPS,
-                                MO(LSYM),   LT(LNAV,KC_ENT), LT(SYM,KC_SPC),   LT(RNAV, KC_TAB),    MO(RSYM)
-  ),
-
-  [COLDHBASE] = LAYOUT_reviung41(
-    KC_ESC,  KC_Q,     KC_W,     KC_F,     KC_P,      KC_B,            KC_J,     KC_L,     KC_U,     KC_Y,     KC_QUOT,  KC_BSPC,
-    KC_TAB,  KC_A,     DH_R,     DH_S,     DH_T,      KC_G,            KC_M,     DH_N,     DH_E,     DH_I,     DH_O,     KC_ENT,
+    KC_ESC,  KC_Q,     KC_W,     KC_F,     KC_P,      KC_B,            KC_J,     KC_L,     KC_U,     KC_Y,     KC_QUOT,     KC_BSPC,
+    KC_TAB,  KC_A,     HR_R,     HR_S,     HR_T,      KC_G,            KC_M,     HR_N,     HR_E,     HR_I,     HR_O,     KC_ENT,
     KC_LSFT, KC_Z,     KC_X,     KC_C,     KC_D,      KC_V,            KC_K,     KC_H,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_CAPS,
                                 MO(LSYM),   LT(LNAV,KC_ENT), LT(SYM,KC_SPC),   LT(RNAV, KC_TAB),    MO(RSYM)
   ),
@@ -125,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_PIPE,      KC_COLN, KC_LT, KC_GT, KC_UNDS, KC_NO, KC_TRNS,
     KC_TRNS, KC_HASH, KC_DLR, KC_LPRN, KC_RPRN, KC_GRV,      KC_PLUS, KC_MINS, KC_EQL, KC_ASTR, KC_SCLN, KC_TRNS,
     KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,    KC_NO, KC_AMPR, KC_BSLS, KC_NO, KC_NO, KC_TRNS,
-                     DF(COLDHBASE), KC_TRNS, KC_TRNS, KC_TRNS, DF(BASE)
+                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 };
 
